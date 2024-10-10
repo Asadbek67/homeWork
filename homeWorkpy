@@ -1,0 +1,101 @@
+# from abc import ABC, abstractmethod
+# class Book(ABC):
+#     def __init__(self, title, aftor, isbn, page_count):
+#         self.title = title
+#         self.author = aftor
+#         self.isbn = isbn
+#         self.page_count = page_count
+#         self.current_page = 0
+#         self.bookmark = None
+#     def get_info(self):
+#         return f"Title: {self.title}, Aftor: {self.aftor}, ISBN: {self.isbn}, Pages: {self.page_count}"
+#     def read_page(self):
+#         if self.current_page < self.page_count:
+#             self.current_page += 1
+#             print(f"Reading page {self.current_page} of '{self.title}'")
+#         else:
+#             print(" finished the book")
+#     def bookmark_page(self):
+#         self.bookmark = self.current_page
+#         print(f"Bookmarked page {self.bookmark} of '{self.title}'")
+#     @abstractmethod
+#     def specific_method(self):
+#         pass
+# class EBook(Book):
+#     def __init__(self, title, aftor, isbn, page_count, file_size):
+#         super().__init__(title, aftor, isbn, page_count)
+#         self.file_size = file_size
+#     def download(self):
+#         print(f"Downloading '{self.title}' of size {self.file_size} MB.")
+#     def specific_method(self):
+#         return f"EBook specific method for '{self.title}'"
+# class AudioBook(Book):
+#     def __init__(self, title, aftor, isbn, page_count, duration):
+#         super().__init__(title, aftor, isbn, page_count)
+#         self.duration = duration
+#     def play(self):
+#         print(f"Playing audio of '{self.title}' for {self.duration} minutes.")
+#     def specific_method(self):
+#         return f"AudioBook specific method for '{self.title}'"
+# ebook = EBook("Python Programming", "John Doe", "123456789", 300, 5)
+# audiobook = AudioBook("Learning Python", "Jane Smith", "987654321", 400, 180)
+# print(ebook.get_info())
+# ebook.download()
+# ebook.read_page()
+# ebook.bookmark_page()
+# print(audiobook.get_info())
+# audiobook.play()
+# audiobook.read_page()
+# audiobook.bookmark_page()
+
+
+# 2_vazifa
+# from abc import ABC, abstractmethod
+# # Abstrakt klass
+# class Vehicle(ABC):
+#     def __init__(self, brand, model, year, mileage):
+#         self.brand = brand
+#         self.model = model
+#         self.year = year
+#         self.mileage = mileage
+#     def get_info(self):
+#         return f"{self.year} {self.brand} {self.model}, Mileage: {self.mileage} km"
+#     @abstractmethod
+#     def start(self):
+#         pass
+#     @abstractmethod
+#     def stop(self):
+#         pass
+# # Car klassi
+# class Car(Vehicle):
+#     def __init__(self, brand, model, year, mileage, num_doors):
+#         super().__init__(brand, model, year, mileage)
+#         self.num_doors = num_doors
+#     def start(self):
+#         return f"The car {self.brand} {self.model} is starting with a roar!"
+#     def stop(self):
+#         return f"The car {self.brand} {self.model} has come to a stop."
+#     def open_trunk(self):
+#         return f"The trunk of the {self.brand} {self.model} is now open."
+# # Bicycle klassi
+# class Bicycle(Vehicle):
+#     def __init__(self, brand, model, year, mileage, gear_count):
+#         super().__init__(brand, model, year, mileage)
+#         self.gear_count = gear_count
+#     def start(self):
+#         return f"The bicycle {self.brand} {self.model} is ready to ride!"
+#     def stop(self):
+#         return f"The bicycle {self.brand} {self.model} has stopped."
+#     def ring_bell(self):
+#         return "Ding ding! The bell has been rung."
+# # Misollar
+# car = Car("Toyota", "Camry", 2020, 15000, 4)
+# bicycle = Bicycle("Giant", "Escape 3", 2021, 500, 21)
+# print(car.get_info())
+# print(car.start())
+# print(car.open_trunk())
+# print(car.stop())
+# print(bicycle.get_info())
+# print(bicycle.start())
+# print(bicycle.ring_bell())
+# print(bicycle.stop())
